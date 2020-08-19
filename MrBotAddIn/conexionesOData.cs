@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace MrBotAddIn
 {
@@ -26,6 +21,24 @@ namespace MrBotAddIn
             get;
             set;
         }
-        
+
+        [Category("Connection")]
+        [Description("Username.")]
+
+        public string Username
+        {
+            get;
+            set;
+        }
+
+        [Category("Connection")]
+        [Description("Password.")]
+
+        public string Password
+        {
+            get;
+            set;
+        }
+
     }
 }

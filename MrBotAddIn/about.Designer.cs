@@ -77,18 +77,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 259);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 13);
+            this.label3.Size = new System.Drawing.Size(153, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "MrBot Odata Client 2019.22.1";
+            this.label3.Text = "MrBot Odata Client 2020.04.20";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 13);
+            this.label4.Size = new System.Drawing.Size(159, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Build #1.2, built on Jan 22, 2019";
+            this.label4.Text = "Build #2.0, built on Abr 20, 2020";
             // 
             // label5
             // 

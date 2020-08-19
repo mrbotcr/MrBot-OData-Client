@@ -1,19 +1,13 @@
 ﻿using Simple.OData.Client;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Json;
-using System.IO;
-using System.Collections.Specialized;
-using Newtonsoft.Json;
 using Microsoft.Data.Edm;
+using Newtonsoft.Json;
 using System.Net;
+using System.Drawing;
 
 namespace MrBotAddIn
 {
@@ -30,7 +24,8 @@ namespace MrBotAddIn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.Owner.Enabled = false;
+            label1.Text = "";
             propertyGrid1.SelectedObject = datosDeConexion;
         }
 
@@ -55,10 +50,12 @@ namespace MrBotAddIn
                         lista.Add(datosDeConexion);
                         MrBotAddIn.Properties.Settings.Default.jsonDeConexiones = JsonConvert.SerializeObject(lista);
                         MrBotAddIn.Properties.Settings.Default.Save();
-                        
-                        connections connections = new connections();
-                        connections.Show();
+
+                        //connections connections = new connections();
+                        //connections.ShowDialog();
+                        this.Owner.Enabled = true;
                         this.Close();
+                        
                     }
                     else
                     {
@@ -77,8 +74,7 @@ namespace MrBotAddIn
 
         private void button3_Click(object sender, EventArgs e)
         {
-            connections connections = new connections();
-            connections.Show();
+            this.Owner.Enabled = true;
             this.Close();
         }
 
@@ -89,26 +85,52 @@ namespace MrBotAddIn
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                /* 
-                    We create an Odata Client Settings to define the URL 
-                    with which we establish the connection
-                */
-                ODataClientSettings odcSettings = new ODataClientSettings();
-                //Define the URL
-                Uri uriOdata = new Uri(datosDeConexion.Url, UriKind.Absolute);
-                odcSettings.BaseUri = uriOdata;
-                /*
-                We establish the connection and we bring the metadata to know if it is connected
-                */
-                ODataClient client = new ODataClient(odcSettings);
-                IEdmModel metadata = await client.GetMetadataAsync<IEdmModel>();
-                var entityTypes = metadata.SchemaElements.OfType<IEdmEntityType>().ToArray();
-                button2.Enabled = true;
-            }catch
+                label1.Text = "Connecting......";
+                label1.ForeColor = Color.Black;
+                button2.Enabled = false;
+                if (datosDeConexion.Name != null & datosDeConexion.Url != null )
+                {
+                    /* 
+                        We create an Odata Client Settings to define the URL 
+                        with which we establish the connection
+                    */
+                    ODataClientSettings odcSettings = new ODataClientSettings();
+                    //Define the URL
+                    Uri uriOdata = new Uri(datosDeConexion.Url);
+                    odcSettings.BaseUri = uriOdata;
+                    odcSettings.Credentials = new NetworkCredential(datosDeConexion.Username, datosDeConexion.Password);
+                    odcSettings.BeforeRequest = requestMessage =>
+                    {
+                        requestMessage.Headers.Accept.Clear();
+                        requestMessage.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                        requestMessage.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/xml"));
+                    };
+
+                    /*
+                    We establish the connection and we bring the metadata to know if it is connected
+                    */
+                    ODataClient client = new ODataClient(odcSettings);
+
+                    IEdmModel metadata = await client.GetMetadataAsync<IEdmModel>();
+                    var entityTypes = metadata.SchemaElements.OfType<IEdmEntityType>().ToArray();
+                    label1.Text = "Successful connection...";
+                    label1.ForeColor = Color.Green;
+                    button2.Enabled = true;
+                }
+                else
+                {
+                    label1.Text = "";
+                    label1.ForeColor = Color.Black;
+                    button2.Enabled = false;
+                    MessageBox.Show("Please complete all the information.");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Error creating the connection.");
+                label1.Text = "Connection not established...";
+                label1.ForeColor = Color.Red;
             }
         }
     }
