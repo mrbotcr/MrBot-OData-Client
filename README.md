@@ -1,2 +1,2 @@
 # MrBot-OData-Client
-OData Client for Excel
+OData Client for Excel.
