@@ -114,11 +114,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(253, 36);
+            this.label3.Location = new System.Drawing.Point(265, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 22);
+            this.label3.Size = new System.Drawing.Size(262, 22);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Report of generated transactions:";
+            this.label3.Text = "List of changes to be committed";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button2
             // 
@@ -127,7 +128,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 31);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Start";
+            this.button2.Text = "Commit";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -136,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(787, 406);
+            this.ClientSize = new System.Drawing.Size(782, 408);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox4);
@@ -147,9 +148,12 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.progressBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(798, 447);
+            this.MinimumSize = new System.Drawing.Size(798, 447);
             this.Name = "Resultados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Results";
+            this.Text = "Review changes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Resultados_FormClosed);
             this.Load += new System.EventHandler(this.Resultados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

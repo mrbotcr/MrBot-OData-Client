@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrBotAddIn", "MrBotAddIn\MrBotAddIn.csproj", "{B3FB4EA8-1E72-4C8C-B7AB-98CD81E2B58F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfficeAddInSetup", "OfficeAddInSetup\OfficeAddInSetup.vdproj", "{966527C1-6060-4C8E-B46D-A81A63318E73}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MrBotAddIn-Setup", "MrBotAddIn-Setup\MrBotAddIn-Setup.vdproj", "{074257E5-BF46-44DF-B9BF-CAD2AD9204B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,14 +20,14 @@ Global
 		{B3FB4EA8-1E72-4C8C-B7AB-98CD81E2B58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3FB4EA8-1E72-4C8C-B7AB-98CD81E2B58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3FB4EA8-1E72-4C8C-B7AB-98CD81E2B58F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.All|Any CPU.ActiveCfg = Release
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.All|Any CPU.Build.0 = Release
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.Debug|Any CPU.ActiveCfg = Debug
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.Debug|Any CPU.Build.0 = Debug
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.Release|Any CPU.ActiveCfg = Release
-		{966527C1-6060-4C8E-B46D-A81A63318E73}.Release|Any CPU.Build.0 = Release
+		{074257E5-BF46-44DF-B9BF-CAD2AD9204B1}.All|Any CPU.ActiveCfg = Release
+		{074257E5-BF46-44DF-B9BF-CAD2AD9204B1}.Debug|Any CPU.ActiveCfg = Debug
+		{074257E5-BF46-44DF-B9BF-CAD2AD9204B1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87F88352-BD0F-45E7-B5D7-4E1969D8E380}
 	EndGlobalSection
 EndGlobal

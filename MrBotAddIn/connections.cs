@@ -459,5 +459,15 @@ namespace MrBotAddIn
             /*ESTE EVENTO SE DISPARA CUANDO SE CIERRA LA VENTANA DE LA CREACIÓN DE UNA CONEXION*/
             cargarConexiones();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

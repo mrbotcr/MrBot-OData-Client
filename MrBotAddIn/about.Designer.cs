@@ -49,9 +49,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 219);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 24);
+            this.label1.Size = new System.Drawing.Size(284, 24);
             this.label1.TabIndex = 12;
-            this.label1.Text = "MrBot Client for OData";
+            this.label1.Text = "MrBot OData Add-In for Excel";
             // 
             // pictureBox3
             // 
@@ -77,27 +77,27 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 259);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 13);
+            this.label3.Size = new System.Drawing.Size(158, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "MrBot Odata Client 2020.04.20";
+            this.label3.Text = "MrBot Odata Add-In 2020.08.27";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 13);
+            this.label4.Size = new System.Drawing.Size(162, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Build #2.0, built on Abr 20, 2020";
+            this.label4.Text = "Build #2.0, built on Aug 27, 2020";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 291);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 13);
+            this.label5.Size = new System.Drawing.Size(207, 13);
             this.label5.TabIndex = 16;
-            this.label5.Text = "MrBot Odata Client is licensed under MIT ";
+            this.label5.Text = "MrBot Odata Add-In is licensed under GPL";
             // 
             // linkLabel1
             // 
@@ -156,6 +156,9 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(396, 413);
+            this.MinimumSize = new System.Drawing.Size(396, 413);
             this.Name = "about";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
